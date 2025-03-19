@@ -1,0 +1,104 @@
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #333;
+}
+
+/* Contenedor del formulario */
+.form-container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    width: 90%; /* Ocupa el 90% del ancho disponible */
+    max-width: 400px; /* Ancho máximo */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+}
+
+/* Título del formulario */
+.form-container h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    text-align: center;
+    color: #2575fc;
+}
+
+/* Grupos de campos del formulario */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #555;
+}
+
+/* Campos de entrada */
+.form-group input {
+    width: 100%; /* Ocupa el 100% del ancho del contenedor padre */
+    padding: 0.75rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+.form-group input:focus {
+    border-color: #2575fc;
+    box-shadow: 0 0 8px rgba(37, 117, 252, 0.3);
+    outline: none;
+}
+
+/* Mensajes de error */
+.error-message {
+    color: #ff4d4d;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    display: none;
+    animation: slideDown 0.3s ease-in-out;
+}
+
+.error-message.show {
+    display: block;
+}
+
+/* Botón de envío */
+.form-group button {
+    width: 100%; /* Ocupa el 100% del ancho del contenedor padre */
+    padding: 0.75rem;
+    background-color: #2575fc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-group button:hover {
+    background-color: #1a5bbf;
+    transform: translateY(-2px);
+}
+
+.form-group button:active {
+    transform: translateY(0);
+}
+/* Estilos para campos válidos e inválidos */
+.form-group input.valido {
+    border-color: #28a745; /* Borde verde */
+}
+
+.form-group input.invalido {
+    border-color: #ff4d4d; /* Borde rojo */
+}
