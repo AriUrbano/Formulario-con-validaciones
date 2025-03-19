@@ -9,6 +9,22 @@ const errorCorreo = document.getElementById('errorCorreo');
 const errorContrasena = document.getElementById('errorContrasena');
 const errorConfirmarContrasena = document.getElementById('errorConfirmarContrasena');
 
+// Selecciona el botón de modo oscuro
+const botonModo = document.getElementById('botonModo');
+
+// Escucha el evento click del botón
+botonModo.addEventListener('click', function () {
+    // Alterna la clase "modo-oscuro" en el body
+    document.body.classList.toggle('modo-oscuro');
+
+    // Cambia el ícono del botón
+    if (document.body.classList.contains('modo-oscuro')) {
+        botonModo.textContent = '🌞'; // Cambia a sol (modo claro)
+    } else {
+        botonModo.textContent = '🌜'; // Cambia a luna (modo oscuro)
+    }
+});
+
 // Expresiones regulares para validación
 const patronCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const patronContrasena = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
@@ -69,7 +85,6 @@ function validarConfirmarContrasena() {
     }
 }
 
-// Validar el formulario antes de enviar
 document.getElementById('formularioRegistro').addEventListener('submit', function (evento) {
     evento.preventDefault(); // Evitar el envío del formulario
 
@@ -81,13 +96,19 @@ document.getElementById('formularioRegistro').addEventListener('submit', functio
     // Verificar si hay errores
     const errores = document.querySelectorAll('.error-message.show');
     if (errores.length === 0) {
-        alert('Formulario enviado con éxito.');
-        this.reset(); // Limpiar el formulario
+        // Mostrar el mensaje de éxito
+        mensajeExito.style.display = 'block';
 
-        // Quitar las clases de validación después de enviar
-        nombreCompleto.classList.remove('valido');
-        correo.classList.remove('valido');
-        contrasena.classList.remove('valido');
-        confirmarContrasena.classList.remove('valido');
+        // Limpiar el formulario después de 2 segundos
+        setTimeout(() => {
+            this.reset(); // Limpiar el formulario
+            mensajeExito.style.display = 'none'; // Ocultar el mensaje de éxito
+
+            // Quitar las clases de validación
+            nombreCompleto.classList.remove('valido');
+            correo.classList.remove('valido');
+            contrasena.classList.remove('valido');
+            confirmarContrasena.classList.remove('valido');
+        }, 2000); // 2 segundos
     }
 });

@@ -1,5 +1,6 @@
 /* Estilos generales */
 body {
+    transition: 1s;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
@@ -7,7 +8,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    background: linear-gradient(135deg, #2d11cb, #2575fc);
     color: #333;
 }
 
@@ -102,3 +103,60 @@ body {
 .form-group input.invalido {
     border-color: #ff4d4d; /* Borde rojo */
 }
+/* Estilos para el mensaje de éxito */
+.mensaje-exito {
+    background-color: #28a745;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 1rem;
+    display: none; /* Oculto por defecto */
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Degradado por defecto */
+    color: #333;
+    transition: background 0.3s, color 0.3s; /* Transición suave */
+}
+
+/* Estilos para el modo oscuro */
+body.modo-oscuro {
+    background: linear-gradient(135deg, #222222, #444444);/* Fondo oscuro sólido */
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+body.modo-oscuro .form-container {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    
+}
+
+body.modo-oscuro .form-group input {
+    background-color: #333333;
+    color: #ffffff;
+    border-color: #555555;
+    
+}
+
+body.modo-oscuro .form-group button {
+    background-color: #444444;
+    color: #ffffff;
+    border-radius: 500px;
+}
+
+body.modo-oscuro .form-group button:hover {
+    background-color: #555555;
+    border-radius: 500px;
+}
+
